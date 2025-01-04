@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/register.css";
 import {
   EyeOpenIcon,
@@ -48,7 +48,8 @@ const Register = () => {
           />
           <div
             className="password-toggle"
-            onClick={() => setShowPassword(!showPassword)}>
+            onClick={() => setShowPassword(!showPassword)}
+          >
             {showPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
           </div>
         </div>
@@ -60,7 +61,8 @@ const Register = () => {
           />
           <div
             className="password-toggle"
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          >
             {showConfirmPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
           </div>
         </div>
