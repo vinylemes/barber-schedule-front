@@ -4,8 +4,29 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: white;
-  padding-top: 200px; /* Added padding to lower the buttons */
+  position: relative; /* Ensure child elements are positioned relative to the container */
+}
+
+.splash-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/splash-screen.svg"); /* Set the image as background */
+  background-size: cover; /* Make the background image responsive */
+  background-position: center; /* Center the background image */
+  z-index: 0; /* Ensure the image is behind the buttons */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items horizontally */
+  width: 100%;
+  position: absolute;
+  bottom: 190px; /* Position the container at the bottom */
+  z-index: 1; /* Ensure buttons are in front of the background image */
 }
 
 .button-login,
@@ -15,6 +36,8 @@
   margin: 0 10px;
   width: 120px; /* Reduced width */
   height: 40px; /* Reduced height */
+  border-radius: 20px; /* Added border-radius to make buttons rounded */
+  transition: transform 0.2s, background-color 0.2s; /* Added transition for animations */
 }
 
 .button-login {
@@ -25,4 +48,14 @@
 .button-register {
   background-color: #ffffff;
   color: black;
+}
+
+.button-login:hover,
+.button-register:hover {
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.button-login:active,
+.button-register:active {
+  transform: scale(0.95); /* Slightly shrink the button on click */
 }
