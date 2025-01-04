@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #4461f2;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

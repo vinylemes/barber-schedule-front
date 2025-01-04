@@ -1,14 +1,12 @@
-import { Button } from "@radix-ui/themes";
-import React from "react";
-import "./splash.css";
+import "../styles/splash.css";
+import splash from "../assets/splash-screen.svg";
 
-const splash = () => {
+const Splash = () => {
   return (
-    <div className="splash-container">
-      <Button className="button-login">Entrar</Button>
-      <Button className="button-register">Registrar</Button>
+    <div className="bg">
+      <img src={splash} />
     </div>
   );
 };
 
-export default splash;
+export default Splash;
