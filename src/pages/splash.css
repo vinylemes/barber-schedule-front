@@ -1,0 +1,28 @@
+.splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  padding-top: 200px; /* Added padding to lower the buttons */
+}
+
+.button-login,
+.button-register {
+  justify-content: center;
+  border: 1px solid black;
+  margin: 0 10px;
+  width: 120px; /* Reduced width */
+  height: 40px; /* Reduced height */
+}
+
+.button-login {
+  background-color: #4461f2;
+  color: white;
+}
+
+.button-register {
+  background-color: #ffffff;
+  color: black;
+}
