@@ -7,12 +7,17 @@ const Home = () => {
 
   return (
     <div className="splash-container">
-      <div className="splash-image"></div> {/* Added a div for the background image */}
-      <div className="button-container"> {/* Added a container for the buttons */}
+      <div className="splash-image"></div>{" "}
+      {/* Added a div for the background image */}
+      <div className="button-container">
+        {" "}
+        {/* Added a container for the buttons */}
         <Button className="button-login" onClick={() => navigate("/login")}>
           Entrar
         </Button>
-        <Button className="button-register" onClick={() => navigate("/register")}>
+        <Button
+          className="button-register"
+          onClick={() => navigate("/register")}>
           Registrar
         </Button>
       </div>
