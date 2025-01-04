@@ -1,20 +1,21 @@
 import { Button } from "@radix-ui/themes";
-import "./index.css";
+import { useNavigate } from "react-router-dom";
 import {
   CrossCircledIcon,
   EyeClosedIcon,
   EyeOpenIcon,
 } from "@radix-ui/react-icons";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
-const LoginForm = () => {
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+const ForgotPasswordForm = () => {
   const [email, setEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
-    <form className="register-form">
+    <form className="forgot-password-form">
       <div>
         <div className="password-input-container">
           <input
@@ -35,10 +36,10 @@ const LoginForm = () => {
         <div className="password-input-container">
           <input
             type={showPassword ? "text" : "password"}
-            placeholder="Digite sua Senha"
+            placeholder="Crie uma nova Senha"
             className="register-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
           />
           <div
             className="password-toggle"
@@ -46,16 +47,15 @@ const LoginForm = () => {
             {showPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
           </div>
         </div>
-
-        <div className="forgot-password">
-          <Link to="/forgotpassword">Esqueceu sua senha?</Link>
-        </div>
       </div>
-      <Button type="submit" className="button-submit">
-        Entrar
+      <Button
+        type="submit"
+        className="button-submit"
+        onClick={() => navigate("/login")}>
+        Alterar
       </Button>
     </form>
   );
 };
 
-export default LoginForm;
+export default ForgotPasswordForm;
