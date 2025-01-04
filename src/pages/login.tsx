@@ -1,10 +1,17 @@
-import React from "react";
+import LoginForm from "../components/login-form/login-form";
+import "../styles/login.css";
 
 const Login = () => {
   return (
-    <div>
-      <h1>Login Page</h1>
-      {/* Add your login form here */}
+    <div className="container">
+      <h1 className="titulo">Faça Login</h1>
+      <LoginForm />
+      <div className="div-criar-conta">
+        <p>
+          ainda não tem conta <br />
+          <span className="criar-conta">Crie aqui!</span>
+        </p>
+      </div>
     </div>
   );
 };
