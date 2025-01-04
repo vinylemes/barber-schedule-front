@@ -1,0 +1,96 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    #f0f0f0,
+    /* Slightly darker shade of white */ #e6e6e6
+  ); /* Gradient background */
+}
+
+.register-title {
+  font-size: 2em; /* Large font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 100px; /* Increased space below the title */
+  color: black;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-input {
+  margin: 10px 0;
+  padding: 20px; /* Increased padding */
+  width: 300px; /* Increased width */
+  border: 1px;
+  border-radius: 5px;
+  background-color: white; /* Set the background of the inputs to white */
+  font-size: 1em; /* Match font size with the button */
+  color: black; /* Set the text color to black */
+  position: relative; /* Ensure the icon is positioned relative to the input */
+}
+
+.register-input::placeholder {
+  font-size: 1em; /* Match font size with the button */
+  font-weight: bold; /* Match font weight with the button */
+}
+
+.password-input-container {
+  position: relative;
+  width: 340px; /* Match width with other input fields */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 30px; /* Ajuste a posição horizontal */
+  top: 50%; /* Ajuste a posição vertical */
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black; /* Set the icon color to black */
+}
+
+.input-clear {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black;
+}
+
+.button-submit {
+  justify-content: center;
+  border: 1px solid black;
+  margin: 20px 0;
+  width: 350px; /* Ajuste a largura do botão */
+  height: 50px; /* Ajuste a altura do botão */
+  border-radius: 10px; /* Reduced border-radius to make the button more square */
+  transition: transform 0.2s, background-color 0.2s; /* Same transition as home buttons */
+  background-color: #4461f2; /* Same background color as login button */
+}
+
+.button-submit:hover {
+  transform: scale(1.05); /* Same hover effect as home buttons */
+}
+
+.button-submit:active {
+  transform: scale(0.95); /* Same active effect as home buttons */
+}
+
+.register-footer {
+  text-align: center;
+  color: black;
+  margin-top: 20px; /* Add some space above the footer */
+}
+
+.register-footer a {
+  color: #4461f2; /* Same color as the button */
+  text-decoration: none; /* Remove underline from link */
+}
