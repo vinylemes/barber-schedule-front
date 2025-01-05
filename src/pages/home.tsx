@@ -1,6 +1,6 @@
-import { Button } from "@radix-ui/themes";
 import { useNavigate } from "react-router-dom";
 import "../styles/home.css";
+import { Button } from "@/components/ui/button";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Home = () => {
           Entrar
         </Button>
         <Button
-          className="button-register hover:text-red-500"
+          className="button-register hover:bg-white hover:border-none"
           onClick={() => navigate("/register")}
         >
           Registrar

@@ -4,7 +4,7 @@ import SubscriptionCarousel from "../components/subscription-carousel/subscripti
 
 const Subscription = () => {
   return (
-    <div className="container">
+    <div className="container ">
       <h1 className="titulo">Escolha um plano</h1>
       <SubscriptionCarousel />
       <Button className="btn">Escolher este plano</Button>
