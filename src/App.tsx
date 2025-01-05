@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import ForgotPassword from "./pages/forgotpassword";
+import RegisterBarbershop from "./pages/registerbarbershop";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/registerbarbershop" element={<RegisterBarbershop />} />
       </Routes>
     </div>
-  );
+  ); 
 }
 
 export default App;

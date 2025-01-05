@@ -7,11 +7,13 @@ import {
 } from "@radix-ui/react-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   return (
     <form className="register-form">
@@ -51,7 +53,10 @@ const LoginForm = () => {
           <Link to="/forgotpassword">Esqueceu sua senha?</Link>
         </div>
       </div>
-      <Button type="submit" className="button-submit">
+      <Button
+        type="submit"
+        className="button-submit"
+        onClick={() => navigate("/registerbarbershop")}>
         Entrar
       </Button>
     </form>
