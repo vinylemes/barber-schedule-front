@@ -4,6 +4,8 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Subscription from "./pages/subscription";
+import ForgotPassword from "./pages/forgotpassword";
+import RegisterBarbershop from "./pages/registerbarbershop";
 
 function App() {
   return (
@@ -13,10 +15,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/registerbarbershop" element={<RegisterBarbershop />} />
         <Route path="/subscription" element={<Subscription />} />
       </Routes>
     </div>
-  );
+  ); 
 }
 
 export default App;

@@ -44,7 +44,8 @@
 
 .password-input-container {
   position: relative;
-  width: 340px; /* Match width with other input fields */
+  width: 340px;
+  height: a; /* Match width with other input fields */
 }
 
 .password-toggle {
