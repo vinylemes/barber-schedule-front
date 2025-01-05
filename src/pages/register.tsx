@@ -1,21 +1,16 @@
-import { useState } from "react";
 import "../styles/register.css";
-import {
-  EyeOpenIcon,
-  EyeClosedIcon,
-  CrossCircledIcon,
-} from "@radix-ui/react-icons";
+
+import { useNavigate } from "react-router-dom";
+import RegisterForm from "@/components/register-form/register-form";
 
 const Register = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   return (
-    <div className="register-container">
-      <h1 className="register-title">Faça seu cadastro</h1> {/* Added title */}
-      <form className="register-form">
+    <div className="container">
+      <h1 className="titulo font-bold text-4xl">Faça seu cadastro</h1>
+
+      {/* <form className="register-form">
         <div className="password-input-container">
           <input
             type="text"
@@ -25,7 +20,7 @@ const Register = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <div className="input-clear" onClick={() => setName("")}>
-            <CrossCircledIcon />
+            <CircleX size={20} />
           </div>
         </div>
         <div className="password-input-container">
@@ -37,7 +32,7 @@ const Register = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <div className="input-clear" onClick={() => setEmail("")}>
-            <CrossCircledIcon />
+            <CircleX size={20} />
           </div>
         </div>
         <div className="password-input-container">
@@ -50,7 +45,7 @@ const Register = () => {
             className="password-toggle"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
+            {showPassword ? <Eye size={20} /> : <EyeClosed size={20} />}
           </div>
         </div>
         <div className="password-input-container">
@@ -63,15 +58,27 @@ const Register = () => {
             className="password-toggle"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
           >
-            {showConfirmPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
+            {showConfirmPassword ? <Eye size={20} /> : <EyeClosed size={20} />}
           </div>
         </div>
-        <button type="submit" className="button-submit">
+
+        <Button
+          type="submit"
+          className="bg-primary text-white my-5 w-[350px] h-[50px] b-r-10 text-lg transition-transform duration-200  hover:scale-105 hover:bg-primary"
+        >
           Registrar
-        </button>
-      </form>
-      <div className="register-footer">
-        Já possui conta? <br /> <a href="/login">Entre aqui!</a>
+        </Button>
+      </form> */}
+
+      <RegisterForm />
+
+      <div className="div-criar-conta">
+        <p>
+          Já possui conta? <br />
+          <span className="criar-conta" onClick={() => navigate("/login")}>
+            Entre aqui!
+          </span>
+        </p>
       </div>
     </div>
   );
