@@ -16,8 +16,9 @@ const Home = () => {
           Entrar
         </Button>
         <Button
-          className="button-register"
-          onClick={() => navigate("/register")}>
+          className="button-register hover:text-red-500"
+          onClick={() => navigate("/register")}
+        >
           Registrar
         </Button>
       </div>
