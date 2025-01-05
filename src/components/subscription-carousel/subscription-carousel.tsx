@@ -5,8 +5,28 @@ import "swiper/css/effect-cards";
 import "./index.css";
 
 import { EffectCards } from "swiper/modules";
+import { useState } from "react";
+import { Plan } from "../../data/plans";
+import { planos } from "../../constants/planos";
+import PlanItem from "../plan-item/plan-item";
 
 const SubscriptionCarousel = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const plans: Plan[] = planos;
+
+  const getSlideClass = (index: number) => {
+    if (index === activeIndex) {
+      return "active-slide";
+    }
+
+    if (index === activeIndex - 1 || index === activeIndex + 1) {
+      return "prev-next-slide";
+    }
+
+    return "last-slide";
+  };
+
   return (
     <>
       <Swiper
@@ -14,17 +34,13 @@ const SubscriptionCarousel = () => {
         grabCursor={true}
         modules={[EffectCards]}
         className="mySwiper"
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
-        <SwiperSlide>
-          <div>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        {plans.map((plan) => (
+          <SwiperSlide key={plan.id} className={getSlideClass(plan.id)}>
+            <PlanItem plan={plan} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
