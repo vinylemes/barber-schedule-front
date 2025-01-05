@@ -1,6 +1,6 @@
 import React from "react";
 import ForgotPasswordForm from "../components/forgot-password-form/forgot-password-form";
-import "../components/forgot-password/forgotpassword.css";
+import "../styles/forgotpassword.css";
 
 const ForgotPassword = () => {
   return (

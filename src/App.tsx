@@ -20,7 +20,7 @@ function App() {
         <Route path="/subscription" element={<Subscription />} />
       </Routes>
     </div>
-  ); 
+  );
 }
 
 export default App;

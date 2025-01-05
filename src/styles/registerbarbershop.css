@@ -1,0 +1,49 @@
+/* Estilo da página principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Garantir que os elementos fiquem no topo */
+  min-height: 100vh; /* Altura mínima igual à altura da tela */
+  width: 100vw;
+  padding: 20px; /* Adiciona espaçamento interno */
+  box-sizing: border-box; /* Inclui padding e border no cálculo de largura/altura */
+  background: linear-gradient(to bottom, #f0f0f0); /* Fundo gradiente */
+}
+
+/* Título */
+.titulo {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Estilo para a área de criar conta */
+.div-criar-conta {
+  font-size: 1.2rem;
+  color: #000;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.criar-conta {
+  color: #4461f2;
+}
+
+.criar-conta:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Garantindo barra de rolagem na página inteira */
+html,
+body {
+  height: 100%; /* Faz o HTML e o BODY ocuparem 100% da altura da tela */
+  margin: 0; /* Remove margens padrão */
+  overflow-y: auto; /* Habilita rolagem na página */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Define uma fonte padrão */
+}
