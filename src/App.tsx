@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom";
 import Splash from "./pages/splash";
 import Home from "./pages/home";
@@ -21,6 +22,7 @@ function App() {
       </Routes>
     </div>
   ); 
+
 }
 
 export default App;
