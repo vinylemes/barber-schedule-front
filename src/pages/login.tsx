@@ -11,7 +11,8 @@ const Login = () => {
       <LoginForm />
       <div className="div-criar-conta">
         <p>
-          ainda não tem conta <br />
+          ainda não tem conta
+          <br />
           <span className="criar-conta" onClick={() => navigate("/register")}>
             Crie aqui!
           </span>
