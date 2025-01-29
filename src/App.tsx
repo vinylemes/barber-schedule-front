@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom";
 import Splash from "./pages/splash";
 import Home from "./pages/home";
@@ -22,7 +23,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </div>
-  );
+
 }
 
 export default App;
