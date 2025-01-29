@@ -1,10 +1,10 @@
-import SidebarMenu from "@/components/sidebar-sheet/sidebar-menu";
+import Header from "@/components/header/header";
 
 const DashboardPage = () => {
   return (
-    <div className="bg-background w-[100vw] h-[100vh] flex flex-col items-center">
+    <div className="bg-background w-full h-full flex flex-col items-center">
       {" "}
-      <SidebarMenu />
+      <Header />
       <p>Dashboard</p>
     </div>
   );
