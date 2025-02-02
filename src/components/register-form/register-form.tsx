@@ -1,5 +1,6 @@
 import "./index.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { CircleX, Eye, EyeClosed } from "lucide-react";
 
@@ -48,6 +49,7 @@ const formSchema = z
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -69,8 +71,7 @@ const RegisterForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 register-form"
-      >
+        className="space-y-8 register-form">
         <div>
           <div className="space-y-4">
             <FormField
@@ -88,8 +89,7 @@ const RegisterForm = () => {
                       />
                       <div
                         onClick={() => field.onChange("")}
-                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
-                      >
+                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2">
                         <CircleX size={20} />
                       </div>
                     </div>
@@ -114,8 +114,7 @@ const RegisterForm = () => {
                       />
                       <div
                         onClick={() => field.onChange("")}
-                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
-                      >
+                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2">
                         <CircleX size={20} />
                       </div>
                     </div>
@@ -140,8 +139,7 @@ const RegisterForm = () => {
                       />
                       <div
                         onClick={() => setShowPassword(!showPassword)}
-                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
-                      >
+                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2">
                         {showPassword ? (
                           <Eye size={20} />
                         ) : (
@@ -172,8 +170,7 @@ const RegisterForm = () => {
                         onClick={() =>
                           setShowConfirmPassword(!showConfirmPassword)
                         }
-                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
-                      >
+                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2">
                         {showConfirmPassword ? (
                           <Eye size={20} />
                         ) : (
@@ -192,9 +189,19 @@ const RegisterForm = () => {
         <Button
           type="submit"
           className="bg-primary text-white my-5 w-[350px] h-[50px] b-r-10 text-lg transition-transform duration-200  hover:scale-105 hover:bg-primary"
+          style={{ marginBottom: "20px" }} // Add margin-bottom to create space
         >
           Entrar
         </Button>
+        <p>
+          Já possui conta?{" "}
+          <span
+            className="text-link cursor-pointer"
+            onClick={() => navigate("/login")}>
+            Entre aqui!
+          </span>
+          <br />
+        </p>
       </form>
     </Form>
   );

@@ -6,10 +6,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="login"
-      style={{ background: "linear-gradient(white, lightpurple)" }}>
-      <h1 className="titulo font-bold" style={{ textAlign: "center" }}>
+    <div className="bg-gradient-to-t from-gradient-start to-gradient-end via-gradient-end/35 w-[100vw] h-[100vh] flex flex-col items-center">
+      <h1 className="titulo font-bold text-4xl mt-24" style={{ textAlign: "center" }}>
         Faça Login
       </h1>
       <LoginForm />
