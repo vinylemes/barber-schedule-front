@@ -1,5 +1,4 @@
 import "./forgot-password-form.css";
-import { useState } from "react";
 import arrobaicon from "../../assets/arroba-icon.svg";
 import { CircleX } from "lucide-react";
 import { z } from "zod";
@@ -36,8 +35,6 @@ const formSchema = z.object({
 });
 
 const ForgotPasswordForm = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
   const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -59,11 +56,11 @@ const ForgotPasswordForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 register-form text-center">
+        className="space-y-8 register-form text-center"
+      >
         <div>
-          <p className="mb-4">
-            Digite seu e-mail e <br />
-            mandaremos um link para <br />
+          <p className="my-4">
+            Digite seu e-mail e mandaremos um link para <br />
             uma nova senha ser criada
           </p>
           <div className="space-y-4 mt-8">
@@ -83,7 +80,8 @@ const ForgotPasswordForm = () => {
                         />
                         <div
                           onClick={() => field.onChange("")}
-                          className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2">
+                          className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
+                        >
                           <CircleX size={20} />
                         </div>
                       </div>
@@ -98,7 +96,8 @@ const ForgotPasswordForm = () => {
         <img src={arrobaicon} alt="arroba icon" className="w-20 h-20 mx-auto" />
         <Button
           type="submit"
-          className="bg-primary text-white my-5 w-[350px] h-[50px] b-r-10 text-lg transition-transform duration-200 hover:scale-105 hover:bg-primary">
+          className="bg-primary text-white my-5 w-[350px] h-[50px] b-r-10 text-lg transition-transform duration-200 hover:scale-105 hover:bg-primary"
+        >
           Alterar senha
         </Button>
       </form>
