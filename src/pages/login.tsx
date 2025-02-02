@@ -6,12 +6,16 @@ const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="container">
-      <h1 className="titulo font-bold text-4xl">Faça Login</h1>
+    <div
+      className="login"
+      style={{ background: "linear-gradient(white, lightpurple)" }}>
+      <h1 className="titulo font-bold" style={{ textAlign: "center" }}>
+        Faça Login
+      </h1>
       <LoginForm />
       <div className="div-criar-conta">
         <p>
-          ainda não tem conta
+          Ainda não tem conta?
           <br />
           <span className="criar-conta" onClick={() => navigate("/register")}>
             Crie aqui!

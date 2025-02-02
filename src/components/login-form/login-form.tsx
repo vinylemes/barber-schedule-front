@@ -58,8 +58,7 @@ const LoginForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 register-form"
-      >
+        className="space-y-8 register-form">
         <div>
           <div className="space-y-4">
             <FormField
@@ -77,8 +76,7 @@ const LoginForm = () => {
                       />
                       <div
                         onClick={() => field.onChange("")}
-                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
-                      >
+                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2">
                         <CircleX size={20} />
                       </div>
                     </div>
@@ -103,8 +101,7 @@ const LoginForm = () => {
                       />
                       <div
                         onClick={() => setShowPassword(!showPassword)}
-                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
-                      >
+                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2">
                         {showPassword ? (
                           <Eye size={20} />
                         ) : (
@@ -120,7 +117,7 @@ const LoginForm = () => {
           </div>
 
           <div className="forgot-password mt-4">
-            <Link to="/forgotpassword" className="text-[#c7c7c7]">
+            <Link to="/forgotpassword" className="text-[black]">
               Esqueceu sua senha?
             </Link>
           </div>
@@ -128,8 +125,7 @@ const LoginForm = () => {
 
         <Button
           type="submit"
-          className="bg-primary text-white my-5 w-[350px] h-[50px] b-r-10 text-lg transition-transform duration-200  hover:scale-105 hover:bg-primary"
-        >
+          className="bg-primary text-white my-5 w-[350px] h-[50px] b-r-10 text-lg transition-transform duration-200  hover:scale-105 hover:bg-primary">
           Entrar
         </Button>
       </form>
