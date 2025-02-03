@@ -1,12 +1,9 @@
-import "./index.css";
-import { useState } from "react";
-
-import { CircleX, Eye, EyeClosed } from "lucide-react";
-
+import "./forgot-password-form.css";
+import arrobaicon from "../../assets/arroba-icon.svg";
+import { CircleX } from "lucide-react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -38,8 +35,6 @@ const formSchema = z.object({
 });
 
 const ForgotPasswordForm = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
   const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -61,117 +56,51 @@ const ForgotPasswordForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 register-form"
+        className="space-y-8 register-form text-center"
       >
         <div>
-          <div className="space-y-4">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl className="password-input-container">
-                    <div className="flex gap-2  w-full">
-                      <Input
-                        placeholder="Digite seu Email"
-                        type="email"
-                        {...field}
-                        className="border-none h-[55px] text-lg py-4"
-                      />
-                      <div
-                        onClick={() => field.onChange("")}
-                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
-                      >
-                        <CircleX size={20} />
+          <p className="my-4">
+            Digite seu e-mail e mandaremos um link para <br />
+            uma nova senha ser criada
+          </p>
+          <div className="space-y-4 mt-8">
+            <div className="flex items-center gap-2 justify-center">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl className="password-input-container">
+                      <div className="flex gap-2 w-full">
+                        <Input
+                          placeholder="Digite seu Email"
+                          type="email"
+                          {...field}
+                          className="border-none h-[55px] text-lg py-4"
+                        />
+                        <div
+                          onClick={() => field.onChange("")}
+                          className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
+                        >
+                          <CircleX size={20} />
+                        </div>
                       </div>
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="newPassword"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl className="password-input-container">
-                    <div className="flex gap-2  w-full">
-                      <Input
-                        placeholder="Crie uma nova Senha"
-                        {...field}
-                        type={showPassword ? "text" : "password"}
-                        className="border-none h-[55px] text-lg py-4"
-                      />
-                      <div
-                        onClick={() => setShowPassword(!showPassword)}
-                        className="right-3 top-1/2 absolute cursor-pointer transform -translate-y-1/2"
-                      >
-                        {showPassword ? (
-                          <Eye size={20} />
-                        ) : (
-                          <EyeClosed size={20} />
-                        )}
-                      </div>
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
           </div>
         </div>
-
+        <img src={arrobaicon} alt="arroba icon" className="w-20 h-20 mx-auto" />
         <Button
           type="submit"
-          className="bg-primary text-white my-5 w-[350px] h-[50px] b-r-10 text-lg transition-transform duration-200  hover:scale-105 hover:bg-primary"
+          className="bg-primary text-white my-5 w-[350px] h-[50px] b-r-10 text-lg transition-transform duration-200 hover:scale-105 hover:bg-primary"
         >
           Alterar senha
         </Button>
       </form>
-
-      {/*<form className="forgot-password-form">
-      <div>
-        <div className="password-input-container">
-          <input
-            type="email"
-            placeholder="Digite seu Email"
-            className="register-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <div
-            className="input-clear"
-            onClick={() => {
-              setEmail("");
-            }}>
-            <CrossCircledIcon />
-          </div>
-        </div>
-        <div className="password-input-container">
-          <input
-            type={showPassword ? "text" : "password"}
-            placeholder="Crie uma nova Senha"
-            className="register-input"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-          />
-          <div
-            className="password-toggle"
-            onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
-          </div>
-        </div>
-      </div>
-      <Button
-        type="submit"
-        className="button-submit"
-        onClick={() => navigate("/login")}>
-        Alterar
-      </Button>
-    </form>
-    */}
     </Form>
   );
 };
